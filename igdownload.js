@@ -10,18 +10,20 @@ try{
     for (var i=0; i<document.getElementsByTagName('meta').length; i++){
         if ('og:video' == document.getElementsByTagName('meta')[i].getAttribute('property')){
             video_url = document.getElementsByTagName('meta')[i].content;
+            console.log(video_url);
         }
     }
     for (var i=0; i<document.getElementsByTagName('meta').length; i++){
         if ('og:image' == document.getElementsByTagName('meta')[i].getAttribute('property')){
             image_url = document.getElementsByTagName('meta')[i].content;
+            console.log(image_url);
         }
     }
     if (video_url){
-        alert(video_url);
+        alert(video_url.split('?')[0]);  // remove query string parameters
     }
     else {
-        alert(image_url);
+        alert(image_url.split('?')[0]);  // remove query string parameters
     }
     // TODO: Get carousel working
     while (document.getElementsByClassName('_8kphn _by8kl coreSpriteRightChevron').length !=0){
