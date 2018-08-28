@@ -1,7 +1,7 @@
 //chrome.tabs.executeScript(null, {file: "jquery.js"});
 function sleepFor( sleepDuration ){
     var now = new Date().getTime();
-    while(new Date().getTime() < now + sleepDuration){ /* do nothing */ } 
+    while(new Date().getTime() < now + sleepDuration){ /* do nothing */ }
 }
 var my_strs = ''
 try{
@@ -20,10 +20,12 @@ try{
         }
     }
     if (video_url){
-        alert(video_url.split('?')[0]);  // remove query string parameters
+        prompt("Video url:", video_url);
+        //alert(video_url.split('?')[0]);  // remove query string parameters
     }
     else {
-        alert(image_url.split('?')[0]);  // remove query string parameters
+        prompt("Image url:", image_url);
+        //alert(image_url.split('?')[0]);  // remove query string parameters
     }
     // TODO: Get carousel working
     while (document.getElementsByClassName('_8kphn _by8kl coreSpriteRightChevron').length !=0){
